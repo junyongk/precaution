@@ -28,14 +28,17 @@
     "start": "probot run ./index.js",
     "test": "standard && LOG_LEVEL=error jest",
     "test:watch": "LOG_LEVEL=error jest --watch --notify --notifyMode=change --coverage",
-    "lint": "standard --fix"
+    "lint": "standard --fix",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "dependencies": {
     "fs-extra": "^7.0.0",
     "probot": "^7.4.0",
     "tslint": "^5.14.0",
     "typescript": "^3.3.4000",
-    "tslint-config-security": "^1.15.0"
+    "tslint-config-security": "^1.15.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "jest": "^24.3.1",
@@ -70,5 +73,6 @@
   "main": "index.js",
   "directories": {
     "test": "test"
-  }
+  },
+  "snyk": true
 }
